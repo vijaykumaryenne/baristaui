@@ -1,0 +1,19 @@
+/*
+    Document   : override
+    Created on : <date>
+    Author     : <author>
+    Description:
+        This is where any of your application specific styles should be included
+*/
+
+.demo-oracle-icon:before {
+  content: url(images/oracle_logo.svg);
+}
+
+.demo-oracle-icon {
+    width: 137px;
+    height: 18px;
+}
+.demo-oracle-icon:before {
+    display: inline;
+}

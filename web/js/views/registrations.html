@@ -1,0 +1,36 @@
+<!--
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+-->
+<div class="oj-hybrid-padding">
+	<h3>Registrations</h3>
+	<div>
+		<table id="table" summary="Registrations" aria-label="Registrations Table"
+			data-bind="ojComponent: {
+				component: 'ojTable', 
+				data: dataSource, 
+				columns: [
+					{headerText: 'Name', field: 'name'},
+					{headerText: 'Company', field: 'company'},
+					{headerText: 'Phone', field: 'phone'},
+					{headerText: 'Email', field: 'email'},
+					{headerText: 'Cloud Project?', field: 'cloudProj'},
+					{headerText: 'Moving?', field: 'moving'},
+					{headerText: 'Role', field: 'role'},					
+					{headerText: 'Timeframe', field: 'timeframe'},					
+					{headerText: 'When', field: 'createdOn', renderer: formatDate}
+				]
+			}">
+		</table>
+	</div>
+</div>
+
+<script type="text/html" id="list_template">
+	<li class="oj-flex-item oj-sm-12">
+		<div>
+			<div class="oj-flex oj-flex-items-pad">
+			
+			</div>
+		</div>
+	</li>
+</script>

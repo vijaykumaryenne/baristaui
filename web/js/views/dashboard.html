@@ -1,0 +1,88 @@
+<!--
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+-->
+<div class="oj-hybrid-padding">
+	
+	
+		
+
+		<form id="formId">
+		    <div id='set-container'>
+		      <div class='oj-flex-bar'>
+		        
+		         <div class='oj-flex-bar-middle'>                 
+		          <!-- You need to set the aria-labelledby attribute to make 
+		          this accessible. -->
+		          <div data-bind="ojComponent: {component: 'ojRadioset', value: coffeeCart}" 
+		               aria-labelledby="mainlabelid" class="oj-choice-direction-row">
+		              <span class="oj-choice-item">
+		                  <input id="1" type="radio" 
+		                         value="1" name="coffeeCart">
+		                  <label for="1">Coffee Cart One</label>
+		              </span>
+		              <span class="oj-choice-item">
+		                  <input id="2" type="radio" 
+		                         value="2" name="coffeeCart">
+		                  <label for="2">Coffee Cart Two</label>
+		              </span>
+		            
+		          </div>
+
+
+		          <button id= "button" data-bind="click: refresh, ojComponent: { component: 'ojButton', display: 'icons', icons:  {start:'fa fa-refresh'}}"></button>
+
+		        </div>
+		      </div>
+		    </div>
+
+		</form>
+
+		
+		
+		<ul id="listview" aria-label="list using collection" style="height:100%" 
+			data-bind="ojComponent: {
+			component: 'ojListView', 
+			data: dataSource, 
+			item: {
+				template: 'list_template'
+			}, 
+			selectionMode: 'single'
+			}">
+		</ul>
+	</div>
+</div>
+
+<script type="text/html" id="list_template">
+	<li class="oj-flex-item oj-sm-12">
+		<div>
+			<div class="oj-flex oj-flex-items-pad">
+				<div class="oj-flex-item oj-lg-2 oj-md-2">
+					<h2 class="demo-employee-name" data-bind="text: customer"></h2>
+					<div class="demo-employee-title" data-bind="text: $parent.formatDate(createdOn)"></div>
+				</div>
+				<div class="oj-flex-item oj-lg-2 oj-md-2">
+					<div class="oj-flex-item oj-sm-only-hide oj-md-4 oj-md-float-end">
+						<h2 data-bind="text: coffeeType"></h2> 
+					</div>
+				</div>
+				<div class="oj-flex-item oj-lg-2 oj-md-2">
+					<div class="oj-flex-item oj-sm-only-hide oj-md-4 oj-md-float-end">
+						<h2 data-bind="text: milkType"></h2>
+					</div>
+				</div>
+				<div class="oj-flex-item oj-lg-3 oj-md-2">
+					<div class="oj-flex-item oj-sm-only-hide oj-md-4 oj-md-float-end">
+						<h2 data-bind="text: comments"></h2>
+					</div>
+				</div>
+				<div class="oj-flex-item oj-lg-2 oj-md-4">
+					<div class="oj-flex-item oj-sm-3 oj-md-4 oj-md-float-end">
+						<button id= "button" data-bind="click: $parent.completeOrder, ojComponent: { component: 'ojButton', label: 'Complete' }">
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</li>
+</script>
